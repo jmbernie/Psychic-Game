@@ -13,7 +13,8 @@
   <div id="game">
 
   <h2>You picked <span id="user-text"><strong>...Nothing Yet.</strong></span></h2>
-  <h2>Computer picked <span id="computer-text"><strong>...Nothing Yet.</strong></span></h2>
+  <!-- during testing, the line below showed computer guess -->
+  <!--<h2>Computer picked <span id="computer-text"><strong>...Nothing Yet.</strong></span></h2>-->
   <h2>User Win: <span id="win-text"><strong>...Nothing Yet.</strong></span></h2>
   <h2>User Loss: <span id="loss-text"><strong>...Nothing Yet.</strong></span></h2>
   <h2>Letters Guessed: <span id="letters-guessed"><strong>...Nothing Yet.</strong></span></h2>
@@ -22,105 +23,17 @@
   </div>
 
   <!--<script type="text/javascript" src="path/to/script.js">-->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 
-  <script type="text/javascript">
-
-    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
-    var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    var alreadyGuessedLetters=[];
-
-    var userWin = 0;
-    var userLoss = 0;
-    var userGuessCount = 0;
-    var userText = document.getElementById("user-text");
-    var computerText = document.getElementById("computer-text");
-    var winnerCount = document.getElementById("win-text");
-    var loserCount = document.getElementById("loss-text");
-    var letterGuessedArray = document.getElementById("letters-guessed");
-
-    // This function is run whenever the user presses a key.
-    document.onkeyup = function(event) {
-      console.log(event);
-      userText.textContent = event.key;
-
-      // Determines which key was pressed.
-      var userGuess = event.key;
-
-      // Randomly chooses a letter from the alphabet array. This is the Computer's guess.
-      //needs to keep same letter until win or timeout
-      //needs to keep same letter until win or timeout
-      //needs to keep same letter until win or timeout
-      //needs to keep same letter until win or timeout
-      var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-      computerText.textContent = computerGuess;
-      letterGuessedArray.textContent = alreadyGuessedLetters;
-      // if ===, userWin++
-      // if !== && not already a guessed letter, push letter onto alreadyGuessedLetters array and add one to userGuessCount
-      // at 10 counts, userLoss++
-
-      if(userGuess==computerGuess){
-        userWin++;
-      }else{
-        alreadyGuessedLetters.push(userGuess);
-        userLoss++;
-      }
-
-
-    // if (userGuess=="r"){
-    //     if (computerGuess=="r"){
-    //       userTie++;
-    //     }else if (computerGuess=="s"){
-    //       userWin++;
-    //     }else if (computerGuess="p"){
-    //       userLoss++;
-    //     } // when it passes to this point, a non-valid character has been entered
-
-    //   }else if (userGuess=="s"){
-    //     if (computerGuess=="r"){
-    //       userWin++;
-    //     }else if (computerGuess=="s"){
-    //       userTie++;
-    //     }else if (computerGuess="p"){
-    //       userLoss++;
-    //     } // when it passes to this point, a non-valid character has been entered
-
-    //   }else if (userGuess=="p") {
-    //     if (computerGuess=="r"){
-    //       userWin++;
-    //     }else if (computerGuess=="s"){
-    //       userLoss++;
-    //     }else if (computerGuess="p") { 
-    //       userTie++;
-    //     } // when it passes to this point, a non-valid character has been entered
-
-    //   }
-
-      winnerCount.textContent = userWin;
-      loserCount.textContent = userLoss;
-      //tieCount.textContent = userTie;
+  <!--<script type="text/javascript">-->
 
 
 
-    //document.write("User Wins = " + userWin);
-    //document.write("<hr>");
-    //document.write("User Loss = " + userLoss);
-    //document.write("<hr>");    
-    //document.write("User Tie  = " + userTie);
-    //document.write("<hr>");
-    //document.selectID()
+    
 
 
 
-
-      }
-
-
-
-
-
-    //};
-//} // while true loop
-  </script>
+  
 
 </body>
 
